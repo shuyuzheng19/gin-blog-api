@@ -1,0 +1,72 @@
+ipDbPath: ip2region.xdb #ip数据库路径
+ip: &ip 172.31.48.226 #全局IP地址
+databaseKey: xiaoyuzuishuai
+myEmail: 2528959216@qq.com #我的邮箱 用于联系我收取对方发送的邮件
+server: #服务器配置
+  release: false #是否为发布模式，如果为true，则禁用掉gin默认的日志和错误处理中间件
+  cron: true #是否开启定时任务
+  apiPrefix: /api/v1 # 全局api的前缀
+  addr: :8888 #监听端口
+  readTimeOut: 10 #单位秒
+  writeTimeOut: 10 #单位秒
+meilisearch: #MeiliSearch搜索配置
+  blogIndex: shuyu-blog #博客index
+  host: http://45.77.250.158:7700 #远程地址
+  apiKey: zhengshuyuzuishuaile8889966 #apiKey
+db: #数据库配置
+  log: false #是否开启gorm日志打印
+  maxIdle: 10 #数据库空闲连接数
+  maxSize: 100 #数据库最大连接数
+  autoCreate: true #gorm自动生成结构体
+  database: postgresql #数据库厂商
+  host: 172.31.48.226 #远程数据库host
+  port: 5432 #数据库端口
+  username: postgres #数据库账号
+  password: 123456 #数据库密码
+  dbname: shuyu-blog #数据库下的某个库
+  timezone: Asia/Shanghai #数据库的时区
+email: #smtp服务配置
+  username: shuyuzheng19@163.com #smtp账号
+  password: ONXVXWJZQYQNOKBH #smtp密码
+  host: smtp.163.com #远程host
+  addr: smtp.163.com:25 #远程地址
+logger: #日志配置
+  encoding: console #输出模式
+  loggerDir: F:/blog/logger
+  defaultName: info.log #默认日志名称
+  outputPaths: stdout #将日志写到哪个文件 如果是stdout则是输出到控制台
+  errorPaths:  #将错误日志写到哪个文件 如果是stderr则是输出到控制台
+  level: info #日志级别 info,warn,debug,error 默认是info
+  dev: false #是否开启开发者追踪
+redis: #redis相关配置
+  host: *ip #redis远程ip
+  port: 6379 #redis端口
+  password:  #redis密码
+  db: 0 #redis db
+  max_size: 10 #最大连接
+  min_idle: 2  #最小连接
+  timeout: 10 #连接超时 单位秒
+upload: #文件上传配置
+  maxImageSize: 5 #允许上传图片的最大大小
+  maxFileSize: 300 #允许上传文件的最大大小
+  uri: http://localhost:8888/static #上传完毕之后 url的前缀
+  path: F:/blog/static #将上传的图片保存到某个位置
+cors: # cors配置
+  enable: true #是否开启跨域
+  allOrigins: true #是否允许所有都可以访问 如果为true，则下面的配置无效
+  allowOrigins: #支持跨域的远程地址
+    - http://127.0.0.1:8888
+  allowMethods: #支持跨域的方法
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  allowHeaders: #支持跨域的请求头
+    - Origin
+    - Content-Type
+    - Authorization
+  exposeHeaders: #不支持跨域的请求头
+    - Access-Control-Allow-Origin
+    - Content-Length
+    - Access-Control-Allow-Header
+  allowCredentials: true
