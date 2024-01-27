@@ -1,7 +1,6 @@
 ipDbPath: ip2region.xdb #ip数据库路径
-ip: &ip 172.31.48.226 #全局IP地址
-databaseKey: xiaoyuzuishuai
-myEmail: 2528959216@qq.com #我的邮箱 用于联系我收取对方发送的邮件
+ip: &ip ip地址 #全局IP地址
+myEmail:  #我的邮箱 用于联系我收取对方发送的邮件
 server: #服务器配置
   release: false #是否为发布模式，如果为true，则禁用掉gin默认的日志和错误处理中间件
   cron: true #是否开启定时任务
@@ -11,7 +10,7 @@ server: #服务器配置
   writeTimeOut: 10 #单位秒
 meilisearch: #MeiliSearch搜索配置
   blogIndex: shuyu-blog #博客index
-  host: http://45.77.250.158:7700 #远程地址
+  host: http://ip:7700 #远程地址
   apiKey: zhengshuyuzuishuaile8889966 #apiKey
 db: #数据库配置
   log: false #是否开启gorm日志打印
@@ -19,15 +18,15 @@ db: #数据库配置
   maxSize: 100 #数据库最大连接数
   autoCreate: true #gorm自动生成结构体
   database: postgresql #数据库厂商
-  host: 172.31.48.226 #远程数据库host
+  host: ip #远程数据库host
   port: 5432 #数据库端口
-  username: postgres #数据库账号
-  password: 123456 #数据库密码
+  username: username #数据库账号
+  password: password #数据库密码
   dbname: shuyu-blog #数据库下的某个库
   timezone: Asia/Shanghai #数据库的时区
 email: #smtp服务配置
-  username: shuyuzheng19@163.com #smtp账号
-  password: ONXVXWJZQYQNOKBH #smtp密码
+  username: username #smtp账号
+  password: password #smtp密码
   host: smtp.163.com #远程host
   addr: smtp.163.com:25 #远程地址
 logger: #日志配置
