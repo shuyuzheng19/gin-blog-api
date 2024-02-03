@@ -11,7 +11,7 @@ server: #服务器配置
 meilisearch: #MeiliSearch搜索配置
   blogIndex: shuyu-blog #博客index
   host: http://ip:7700 #远程地址
-  apiKey: zhengshuyuzuishuaile8889966 #apiKey
+  apiKey: apiKey #apiKey
 db: #数据库配置
   log: false #是否开启gorm日志打印
   maxIdle: 10 #数据库空闲连接数
@@ -31,7 +31,7 @@ email: #smtp服务配置
   addr: smtp.163.com:25 #远程地址
 logger: #日志配置
   encoding: console #输出模式
-  loggerDir: F:/blog/logger
+  loggerDir: 
   defaultName: info.log #默认日志名称
   outputPaths: stdout #将日志写到哪个文件 如果是stdout则是输出到控制台
   errorPaths:  #将错误日志写到哪个文件 如果是stderr则是输出到控制台
